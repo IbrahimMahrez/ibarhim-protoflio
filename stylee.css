@@ -1,0 +1,311 @@
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --primary: #000000;
+   
+            --secondary: #D1FF4D;
+            --light-dark: #1a1a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px var(--secondary); }
+            50% { box-shadow: 0 0 20px var(--secondary); }
+            100% { box-shadow: 0 0 5px var(--secondary); }
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-dark) 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite 2s;
+        }
+        
+        .profile-img {
+            animation: float 6s ease-in-out infinite;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 0 30px rgba(247, 255, 0, 0.5);
+        }
+        
+        .profile-img:hover {
+            animation: glow 1.5s infinite, float 6s ease-in-out infinite;
+        }
+        
+        .typing-text {
+            border-right: 3px solid var(--secondary);
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--secondary); }
+        }
+        
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .about::before, .about::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.2;
+            animation: float 8s ease-in-out infinite;
+        }
+        .about::before {
+            top: -100px;
+            left: -100px;
+        }
+        .about::after {
+            bottom: -100px;
+            right: -100px;
+            animation-delay: 2s;
+        }
+        
+        /* Education Section */
+        .education {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-dark) 70%);
+        }
+        
+        /* Skills Section */
+        .skills {
+ background: linear-gradient(135deg, var(--primary) 50%, var(--secondary) 980%);
+            position: relative;
+            overflow: hidden;
+
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.skill-card i, .skill-card img {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.skill-card:hover i, .skill-card:hover img {
+  transform: scale(1.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+        /* Certificates Section */
+        .certificates {
+            background: linear-gradient(135deg, var(--light-dark) 0%, var(--primary) 70%);
+        }
+        
+        /* Work Experience Section */
+        .work-experience {
+            background: linear-gradient(135deg, #111 0%, #232323 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        .work-experience::before {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--secondary);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.1;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-dark);
+        }
+        
+        .contact-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 10px rgba(247, 255, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(247, 255, 0, 0.3);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: var(--secondary);
+        }
+        
+        /* Project Cards */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 10px 30px rgba(247, 255, 0, 0.1);
+        }
+        
+        .tech-tag {
+            transition: all 0.3s ease;
+            background: rgba(247, 255, 0, 0.1);
+        }
+        
+        /* Services Section */
+        .services {
+               background: linear-gradient(105deg, var(--light-dark) 150%, var(--primary) 2000%);
+        }
+        
+        .service-card {
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(247, 255, 0, 0.15);
+            border-left-width: 8px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero::before, .hero::after {
+                display: none;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    
